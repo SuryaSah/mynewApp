@@ -7,7 +7,7 @@
       	<div class="col-xs-11">
       		<h4 class="text-center" [hidden]="hideElement" ><b class="text-color">{{searchName}}</b>
             <span class="glyphicon glyphicon-search pull-right text-color" (click)="openSeachBox()"></span> </h4>
-          <search [hidden]="hideSearch" [searchName] = "childName" (searchButtonSelectionChanged)="newSearch($event)"></search>
+          <search [hidden]="hideSearch" (searchButtonSelectionChanged)="newSearch($event)"></search>
 		    </div>
 	</div>
   <br>

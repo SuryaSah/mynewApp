@@ -1,0 +1,27 @@
+	<div class="row header">
+		<div class="col-xs-1">
+			<button type="button" class="btn btn-default navbar-btn pull-left" (click) = "previousPage()">
+        		<span class="glyphicon glyphicon-chevron-left"></span>
+      		</button>
+      	</div>
+      	<div class="col-xs-11">
+      		<h4 class="text-center" [hidden]="hideElement" >{{searchName}}
+            <span class="glyphicon glyphicon-search pull-right" (click)="openSeachBox()"></span> </h4>
+          <search [hidden]="hideSearch" [searchName] = "childName" (searchButtonSelectionChanged)="newSearch($event)"></search>
+		    </div>
+	</div>
+  <br>
+  <div class="container-fluid">
+    <div class="row search-results"
+            infinite-scroll
+            [infiniteScrollDistance]="scrollDistance"
+            [infiniteScrollUpDistance]="scrollUpDistance"
+            [infiniteScrollThrottle]="throttle"
+            [scrollWindow]="true"
+            (scrolled)="onScroll()">
+        <div class="col-xs-4 " *ngFor = 'let movie of movieList'>
+		  <img src="assets/images/{{movie['poster-image']}}" onerror="this.src='http://i1381.photobucket.com/albums/ah215/mzartdesigns/google-logo_zpspkcztsjo.png';" class="img-responsive">
+		  <p>{{movie['name']}}</p>
+	    </div>
+    </div>
+</div>

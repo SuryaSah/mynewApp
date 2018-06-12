@@ -1,0 +1,17 @@
+<div id="custom-search-input " class="search">
+	<div class="input-group">
+	    <input type="text" class="search-query form-control" placeholder="Search" [(ngModel)] = "searchName" (keyup)="filter()" />
+	    <span class="input-group-btn">
+	        <button class="btn btn-danger" type="button" (click) = "searchMovie()">
+	            <span class=" glyphicon glyphicon-search"></span>
+	        </button>
+	    </span>
+	</div>
+	<div class="suggestions" *ngIf="filteredList.length > 0">
+        <ul *ngFor="let item of filteredList" id="myUL">
+            <li >
+                <a (click)="select(item)">{{item}}</a>
+            </li>
+        </ul>
+    </div>
+</div>

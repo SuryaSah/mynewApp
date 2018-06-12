@@ -5,8 +5,8 @@
       		</button>
       	</div>
       	<div class="col-xs-11">
-      		<h4 class="text-center" [hidden]="hideElement" >{{searchName}}
-            <span class="glyphicon glyphicon-search pull-right" (click)="openSeachBox()"></span> </h4>
+      		<h4 class="text-center" [hidden]="hideElement" ><b class="text-color">{{searchName}}</b>
+            <span class="glyphicon glyphicon-search pull-right text-color" (click)="openSeachBox()"></span> </h4>
           <search [hidden]="hideSearch" [searchName] = "childName" (searchButtonSelectionChanged)="newSearch($event)"></search>
 		    </div>
 	</div>
@@ -21,7 +21,7 @@
             (scrolled)="onScroll()">
         <div class="col-xs-4 " *ngFor = 'let movie of movieList'>
 		  <img src="assets/images/{{movie['poster-image']}}" onerror="this.src='http://i1381.photobucket.com/albums/ah215/mzartdesigns/google-logo_zpspkcztsjo.png';" class="img-responsive">
-		  <p>{{movie['name']}}</p>
+		  <p class="text">{{movie['name']}}</p>
 	    </div>
     </div>
 </div>

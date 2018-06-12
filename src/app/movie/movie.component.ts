@@ -22,7 +22,7 @@ export class MovieComponent implements OnInit,OnDestroy{
   searchName:string;
   private sub: any;
   hideSearch:boolean = true;
-  hideElement:boolean = true;
+  hideElement:boolean = false;
 
   	constructor(private router: Router,private _movieService: MovieService,private route: ActivatedRoute) {
     }

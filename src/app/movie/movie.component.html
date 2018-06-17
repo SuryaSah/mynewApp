@@ -23,5 +23,10 @@
 		  <img src="assets/images/{{movie['poster-image']}}" onerror="this.src='http://i1381.photobucket.com/albums/ah215/mzartdesigns/google-logo_zpspkcztsjo.png';" class="img-responsive">
 		  <p class="text">{{movie['name']}}</p>
 	    </div>
+      <div class="col-xs-12" *ngIf = 'movieList.length===0'>
+        <!-- <center> -->
+          <h4 class="text-center text-color">No data found</h4>
+        <!-- </center> -->
+      </div>
     </div>
 </div>

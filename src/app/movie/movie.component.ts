@@ -48,26 +48,17 @@ export class MovieComponent implements OnInit,OnDestroy{
         	for(let i in sub_content){
         		this.movieList.push(sub_content[i])
         	}
-        	console.log("movie list is",this.movieList);
-        	console.log("page no is",this.pageNo);
-        	console.log("page size is",this.pageSize);
-        	console.log("total page is",this.totalPage);
-        	console.log("total record is",this.totalRecords);
-        	console.log("current record is",this.currentRecord);
         },
         error => {
-          console.log("image error");
           this.statusMessage =
            'Problem with the service. Please try again after sometime'
              });
     }
     onScroll () {
-      console.log('scrolled down!!');
       this.pageNo = this.pageNo+1;
       this.getSearchList(this.searchName,this.pageNo);
     }
     openSeachBox(){
-      console.log("u clicked me");
       this.hideSearch = false; 
       this.hideElement = true;
     }

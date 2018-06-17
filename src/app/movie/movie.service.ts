@@ -13,7 +13,7 @@ export class MovieService {
 	constructor(private _http:Http){}
 	getMovieList(search_name:string,pageno:number): Observable<any[]> {
         return this._http.get('/assets/CONTENTLISTINGPAGE-PAGE'+pageno+'.json')
-        	.map((response:Response)=> <any[]> response.json())
+        	.map((response:Response)=>  response.json())
         	.filter((data)=>data.page.title === search_name);
     }
 }

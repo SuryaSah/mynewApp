@@ -41,7 +41,7 @@ export class SearchComponent {
             this.message = "*Valid input required"
         }
         else {
-            this.router.navigate(['/searchList',this.searchName]);
+            //this.router.navigate(['/searchList',this.searchName]);
             this.searchButtonSelectionChanged.emit(this.searchName);
         }
     }

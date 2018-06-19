@@ -8,7 +8,7 @@ import { Router, ActivatedRoute } from '@angular/router';
   templateUrl: './movie.component.html',
   providers: [MovieService]
 })
-export class MovieComponent implements OnInit,OnDestroy{
+export class MovieComponent implements OnInit{
 	statusMessage:string = " ";
 	pageNo:number = 1;
 	movieList:any = [];
@@ -28,14 +28,14 @@ export class MovieComponent implements OnInit,OnDestroy{
     }
 
     ngOnInit(){
-       this.sub = this.route.params.subscribe(params => {
-       this.searchName = params['searchName'];
-       this.getSearchList(this.searchName,this.pageNo);
-      });
+       //this.sub = this.route.params.subscribe(params => {
+       //this.searchName = params['searchName'];
+       //this.getSearchList(this.searchName,this.pageNo);
+      //});
       }
-    previousPage(){
+    /*previousPage(){
       this.router.navigate(['/search']);
-    }
+    } */
     getSearchList(search_name:string,page_no:number){
         this._movieService.getMovieList(search_name,page_no)
         .subscribe(data => {
@@ -64,12 +64,13 @@ export class MovieComponent implements OnInit,OnDestroy{
     }
     newSearch(selectedRadioButtonValue: string){
       this.pageNo = 1;
+      this.movieList = [];
       this.searchName = selectedRadioButtonValue;
       this.getSearchList(this.searchName,this.pageNo);
       this.hideSearch = true; 
       this.hideElement = false;
     }
-    ngOnDestroy() {
-      this.sub.unsubscribe();
-    }
+   // ngOnDestroy() {
+   //   this.sub.unsubscribe();
+   // }
 }

@@ -1,4 +1,4 @@
-	<div class="row header">
+<!-- 	<div class="row header">
 		<div class="col-xs-1">
 			<button type="button" class="btn btn-default navbar-btn pull-left" (click) = "previousPage()">
         		<span class="glyphicon glyphicon-chevron-left"></span>
@@ -11,7 +11,7 @@
 		    </div>
 	</div>
   <br>
-  <div class="container-fluid">
+  <div class="container">
     <div class="row search-results"
             infinite-scroll
             [infiniteScrollDistance]="scrollDistance"
@@ -24,9 +24,47 @@
 		  <p class="text">{{movie['name']}}</p>
 	    </div>
       <div class="col-xs-12" *ngIf = 'movieList.length===0'>
-        <!-- <center> -->
           <h4 class="text-center text-color">No data found</h4>
-        <!-- </center> -->
+      </div>
+    </div>
+</div> -->
+<!-- Fixed navbar -->
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+      <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-chevron-left text-color"></span></a>
+      <a class="navbar-brand" href="#" [hidden]="hideElement">{{searchName}}</a>
+      <div class="navbar-right pull-right" [hidden]="hideElement">
+        <a class="navbar-brand" href="#">
+          <span class="glyphicon glyphicon-search" (click)="openSeachBox()"></span>
+        </a>
+      </div>
+      <div class="navbar-left" >
+          <search [hidden]="hideSearch" (searchButtonSelectionChanged)="newSearch($event)"></search>
+      </div>
+  </div>
+</nav>
+ <br>
+  <div class="container">
+    <div class="row search-results"
+            infinite-scroll
+            [infiniteScrollDistance]="scrollDistance"
+            [infiniteScrollUpDistance]="scrollUpDistance"
+            [infiniteScrollThrottle]="throttle"
+            [scrollWindow]="true"
+            (scrolled)="onScroll()">
+        <div class="col-xs-4 " *ngFor = 'let movie of movieList'>
+          <div class="panel panel-default">
+            <div class="panel-body" style="background-color:#000000">
+              <img src="assets/images/{{movie['poster-image']}}" onerror="this.src='http://i1381.photobucket.com/albums/ah215/mzartdesigns/google-logo_zpspkcztsjo.png';" class="img-responsive center-block">
+            </div>
+            <div class="panel-footer text-color" style="background-color:#5d0f0f;">
+            <p>{{movie['name']}}</p></div>
+          </div>
+      <!-- <img src="assets/images/{{movie['poster-image']}}" onerror="this.src='http://i1381.photobucket.com/albums/ah215/mzartdesigns/google-logo_zpspkcztsjo.png';" class="img-responsive">
+      <p class="text"></p> -->
+      </div>
+      <div class="col-xs-12" *ngIf = 'movieList.length===0'>
+          <h4 class="text-center">No data found</h4>
       </div>
     </div>
 </div>

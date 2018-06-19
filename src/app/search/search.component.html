@@ -1,5 +1,5 @@
-<div id="custom-search-input " class="search">
-	<div class="input-group">
+<!-- <div id="custom-search-input " class="search"> -->
+	<div class="input-group" style="position:absolute;top:10px;width:94%">
 	    <input type="text" class="search-query form-control" placeholder="Search" [(ngModel)] = "searchName" (keyup)="filter()" (keydown)="handleKeyDown($event)"/>
 	    <span class="input-group-btn">
 	        <button class="btn btn-danger" type="button" (click) = "searchMovie()">
@@ -15,4 +15,4 @@
         </ul>
     </div>
     <p class="text-danger">{{message}}</p>
-</div>
+<!-- </div> -->

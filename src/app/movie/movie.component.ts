@@ -19,7 +19,7 @@ export class MovieComponent implements OnInit{
 	throttle = 300;
   scrollDistance = 2;
   scrollUpDistance = 1.5;
-  searchName:string;
+  searchName:string = 'Romantic Comedy';
   private sub: any;
   hideSearch:boolean = true;
   hideElement:boolean = false;
@@ -30,7 +30,7 @@ export class MovieComponent implements OnInit{
     ngOnInit(){
        //this.sub = this.route.params.subscribe(params => {
        //this.searchName = params['searchName'];
-       //this.getSearchList(this.searchName,this.pageNo);
+       this.getSearchList(this.searchName,this.pageNo);
       //});
       }
     /*previousPage(){

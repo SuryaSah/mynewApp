@@ -1,7 +1,14 @@
 body{
-  /*background-color : black;*/
-  /*overflow-x: hidden;*/
+  background-color : black;
+  /*overflow-x: hidden;*/ 
 }
+.cut-text { 
+  text-overflow: ellipsis;
+  overflow: hidden;  
+  height: 1.2em; 
+  white-space: nowrap;
+}
+
 .header {
     background-color: brown;
     padding-left: 15px;
@@ -73,3 +80,27 @@ body{
     .search-query:focus + button {
         z-index: 3;   
     }
+
+    /* xs */
+/*img {
+    width: 100px;
+    height: auto;
+}*/
+/* sm */
+@media (min-width: 768px) {
+    .image-not-found {
+          height: 172px;
+        }
+}
+/* md */
+@media (min-width: 992px) {
+    .image-not-found {
+          height: 222px;
+        }
+}
+/* lg */
+@media (min-width: 1200px) {
+    .image-not-found {
+          height: 272px;
+        }
+}

@@ -2,7 +2,7 @@
 	<div class="input-group" style="position:absolute;top:10px;width:94%">
 	    <input type="text" class="search-query form-control" placeholder="Search" [(ngModel)] = "searchName" (keyup)="filter()" (keydown)="handleKeyDown($event)"/>
 	    <span class="input-group-btn">
-	        <button class="btn btn-danger" type="button" (click) = "searchMovie()">
+	        <button class="btn btn-default" type="button" (click) = "searchMovie()">
 	            <span class=" glyphicon glyphicon-search"></span>
 	        </button>
 	    </span>

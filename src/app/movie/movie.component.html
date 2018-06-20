@@ -31,11 +31,13 @@
 <!-- Fixed navbar -->
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
-      <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-chevron-left text-color"></span></a>
+      <a class="navbar-brand" href="#">
+        <img src="assets/images/Back.png" width="20px" class="img-responsive" />
+      </a>
       <a class="navbar-brand" href="#" [hidden]="hideElement">{{searchName}}</a>
       <div class="navbar-right pull-right" [hidden]="hideElement">
         <a class="navbar-brand" href="#">
-          <span class="glyphicon glyphicon-search" (click)="openSeachBox()"></span>
+          <img src="assets/images/search.png" (click)="openSeachBox()" width="20px" class="img-responsive">
         </a>
       </div>
       <div class="navbar-left" >
@@ -53,15 +55,8 @@
             [scrollWindow]="true"
             (scrolled)="onScroll()">
         <div class="col-xs-4 " *ngFor = 'let movie of movieList'>
-          <div class="panel panel-default">
-            <div class="panel-body" style="background-color:#000000">
-              <img src="assets/images/{{movie['poster-image']}}" onerror="this.src='http://i1381.photobucket.com/albums/ah215/mzartdesigns/google-logo_zpspkcztsjo.png';" class="img-responsive center-block">
-            </div>
-            <div class="panel-footer text-color" style="background-color:#5d0f0f;">
-            <p>{{movie['name']}}</p></div>
-          </div>
-      <!-- <img src="assets/images/{{movie['poster-image']}}" onerror="this.src='http://i1381.photobucket.com/albums/ah215/mzartdesigns/google-logo_zpspkcztsjo.png';" class="img-responsive">
-      <p class="text"></p> -->
+              <img src="assets/images/{{movie['poster-image']}}" onerror="this.className='image-not-found img-responsive center-block';this.src='assets/images/placeholder_for_missing_posters.png';" class="img-responsive center-block" style="margin-bottom:24px;">
+            <p class="text-center text-color cut-text" style="margin-bottom:90px;">{{movie['name']}}</p>
       </div>
       <div class="col-xs-12" *ngIf = 'movieList.length===0'>
           <h4 class="text-center">No data found</h4>
